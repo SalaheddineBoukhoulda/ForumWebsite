@@ -19,13 +19,13 @@ class ChannelsTableSeeder extends Seeder
         $channel6 = ['title' => 'React'];
         $channel7 = ['title' => 'Swift'];
 
-        App\User::create($channel1);
-        App\User::create($channel2);
-        App\User::create($channel3);
-        App\User::create($channel4);
-        App\User::create($channel5);
-        App\User::create($channel6);
-        App\User::create($channel7);
+        App\Channel::create($channel1);
+        App\Channel::create($channel2);
+        App\Channel::create($channel3);
+        App\Channel::create($channel4);
+        App\Channel::create($channel5);
+        App\Channel::create($channel6);
+        App\Channel::create($channel7);
 
     }
 }

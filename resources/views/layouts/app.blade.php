@@ -75,6 +75,9 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
+                        <a href="{{route('discussions.create')}}" class="form-control btn btn-lg btn-info text-center">Create discussion</a>
+                        <br>
+                        <br>
                         <div class="card">
                             <div class="card-header">
                                 Channels
