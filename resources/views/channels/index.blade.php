@@ -16,7 +16,7 @@
                                 <tr>
                                     <td>{{$channel->title}}</td>
                                     <td>
-                                        <a href="{{route('channels.edit',['channel'=>$channel->id])}}" class="btn btn-primary btn-lg">Edit</a>
+                                        <a href="{{route('channels.edit',['channel'=>$channel->id])}}" class="btn btn-info btn-lg">Edit</a>
                                     </td>
                                     <td>
                                         <form action="{{route('channels.destroy',['channel'=>$channel->id])}}" method="post">

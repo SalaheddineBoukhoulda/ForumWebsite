@@ -12,7 +12,7 @@
                         </div>
                         <div class="form-group">
                             <div class="text-center">
-                                <button class="btn btn-success">
+                                <button class="btn btn-info btn-lg">
                                     Create channel
                                 </button>
                             </div>

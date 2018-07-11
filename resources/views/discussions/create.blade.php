@@ -8,6 +8,10 @@
                         <form action="{{route('discussions.store')}}" method="post">
                                 {{csrf_field()}}
                                 <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" name="title">
+                                </div>
+                                <div class="form-group">
                                     <label for="channel">Choose channel</label>
                                     <select name="channel_id" id="channel_id" class="form-control">
                                         @foreach($channels as $channel)
@@ -20,8 +24,8 @@
                                     <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
-                                        <div class="text-center">
-                                            <button class="btn btn-success">
+                                        <div class="text-right">
+                                            <button class="btn btn-lg btn-info">
                                                 Create discussion
                                             </button>
                                         </div>
