@@ -28,7 +28,7 @@ Route::get('/{provider}/redirect',[
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/forum', 'ForumController@index')->name('home');
 
 
 Route::group(['middleware' => 'auth'],function(){
