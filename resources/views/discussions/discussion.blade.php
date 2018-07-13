@@ -34,5 +34,24 @@
                 Like
         </div>
 </div>
+<br>
 @endforeach
+<br>
+<br>
+<form action="{{route('discussions.reply',['id' => $discussion->id])}}" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+                <label for="content">Leave a reply</label>
+                <textarea name="content" id="content" cols="30" rows="10" class="form-control">
+
+                </textarea>
+        </div>
+        <div class="form-group">
+                <div class="text-right">
+                        <button class="btn btn-info">
+                            Reply
+                        </button>
+                </div>
+        </div>
+</form>
 @endsection
