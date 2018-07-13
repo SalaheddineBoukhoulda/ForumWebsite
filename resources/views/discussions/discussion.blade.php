@@ -32,9 +32,9 @@
         </div>
         <div class="card-footer">
                 @if($reply->isLikedByUser())
-                        <a href="{{route('reply.like',['id'=>$reply->user->id])}}" class="btn btn-danger pull-left">Unlike</a>
+                        <a href="{{route('reply.unlike',['id'=>$reply->id])}}" class="btn btn-danger pull-left">Unlike</a>
                 @else
-                        <a href="{{route('reply.unlike',['id'=>$reply->user->id])}}" class="btn btn-info pull-left">Like</a>
+                        <a href="{{route('reply.like',['id'=>$reply->id])}}" class="btn btn-info pull-left">Like</a>
                 @endif
         </div>
 </div>
