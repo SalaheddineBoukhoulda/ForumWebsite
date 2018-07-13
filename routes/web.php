@@ -30,9 +30,15 @@ Auth::routes();
 
 Route::get('/forum', 'ForumController@index')->name('home');
 
+Route::get('/channels/{slug}',[
+    'uses' => 'ForumController@channel',
+    'as' => 'channel'
+]);
+
 
 Route::group(['middleware' => 'auth'],function(){
     Route::resource('channels','ChannelsController');
+
     Route::get('/discussions/create',[
         'uses' => 'DiscussionsController@create',
         'as' => 'discussions.create'

@@ -5,7 +5,7 @@
         <div class="card-header">
             <img src="{{asset($discussion->user->avatar)}}" alt="{{$discussion->title}}" width="40px" height="40px">
             &nbsp;&nbsp;
-            <span>{{$discussion->user->name}}</span>
+            <span>{{$discussion->user->name}}, <b>{{$discussion->created_at->diffForHumans()}}</b></span>
         </div>
         <div class="card-body">
             <div class="text-center">
@@ -32,9 +32,15 @@
         </div>
         <div class="card-footer">
                 @if($reply->isLikedByUser())
-                        <a href="{{route('reply.unlike',['id'=>$reply->id])}}" class="btn btn-danger pull-left">Unlike</a>
+                        <a href="{{route('reply.unlike',['id'=>$reply->id])}}" class="btn btn-danger pull-left">
+                                Unlike
+                                <span class="badge">{{$reply->likes->count()}}</span>
+                        </a>
                 @else
-                        <a href="{{route('reply.like',['id'=>$reply->id])}}" class="btn btn-info pull-left">Like</a>
+                        <a href="{{route('reply.like',['id'=>$reply->id])}}" class="btn btn-info pull-left">
+                                Like
+                                <span class="badge">{{$reply->likes->count()}}</span>
+                        </a>
                 @endif
         </div>
 </div>
