@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Reply extends Model
 {
@@ -18,5 +19,18 @@ class Reply extends Model
 
     public function likes(){
         return $this->hasMany('App\Like');
+    }
+
+
+    public function isLikedByUser(){
+        $user_id = Auth::id();
+        $likers = array();
+        foreach($this->likes as $like):
+            array_push($likers,$like->user_id);
+        endforeach;
+        if(in_array($user_id,$likers))
+        return true;
+        else return false;
+
     }
 }

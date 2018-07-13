@@ -31,7 +31,11 @@
                 {{$reply->content}}
         </div>
         <div class="card-footer">
-                Like
+                @if($reply->isLikedByUser())
+                        <a href="{{route('reply.like',['id'=>$reply->user->id])}}" class="btn btn-danger pull-left">Unlike</a>
+                @else
+                        <a href="{{route('reply.unlike',['id'=>$reply->user->id])}}" class="btn btn-info pull-left">Like</a>
+                @endif
         </div>
 </div>
 <br>
